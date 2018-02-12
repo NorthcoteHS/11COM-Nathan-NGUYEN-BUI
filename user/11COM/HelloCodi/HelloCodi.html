@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello Codi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <style type="text/css">
+            /* Your CSS goes here */
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Your HTML goes here -->
+<audio id="myAudio">
+  <source src="Bee-Sound.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+    <div>
+        <button form="image" onclick="playAudio()">
+            <img src="codi.jpg"/>
+
+        </button>
+        
+<h1 id="Textline">Touch the Bee!</h1>
+        
+        <script>
+            /* Your JS goes here */
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+    x.load();
+    x.play(); 
+    
+} 
+            
+        </script>
+    </body>
+</html>
