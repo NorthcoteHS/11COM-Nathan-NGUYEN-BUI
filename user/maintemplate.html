@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello 8Ball</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <style type="text/css">
+            /* Your CSS goes here */
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Your HTML goes here -->
+    <div>
+        <button form="image" onclick="test()">
+            <img src="8ball.png" alt="8-Ball" style="width:300px;height:300px;">
+        <p> How can I help you today? </p>
+
+            <input type="text" placeholder="Enter a question"></input>
+        <script>
+            /* Your JS goes here */
+function playAudio() { 
+    
+    x.load();
+    
+    x.play(); 
+    
+} 
+            // This is the random list
+            function test()
+                var values =  ["It is certain.", "It is decidedly so.", "Without a doubt.", "Yes, definitely.", "You may rely on it.", "As I see it, yes.", "Most likely.", "Outlook good.", "Yes.", "Signs point to yes.", "Reply hazy, try again.", "Ask again later.", "Better not tell you now.", "Cannot predict now.", "Concentrate and ask again.", "Don't count on it.", "My reply is no.", "My sources say no.", "Outlook not so good.", "Very doubtful."];
+            valueToUse = values[Math.floor(math.random)*values.length]
+            
+            alert(valueToUse);
+ 
+  8ball.getAnswer = function(question)
+  {
+    var randomNumber = Math.random();
+    var randomAnswer = Math.floor(randomNumber * this.listofanswers.length);
+    var answer = this.listofanswers[randomAnswer];
+  }
+        </script>
+    </body>
+</html>

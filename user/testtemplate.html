@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello 8Ball</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <style type="text/css">
+            /* Your CSS goes here */
+            body {
+                text-align: left;
+            }
+            p, input, button {
+                font-family: sans-serif;
+                font-size: 15px;
+            }
+            input {
+                width: 200px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Your HTML goes here -->
+<audio id="myAudio">
+  <source src="Clinking_Teaspoon.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+    <div>
+        <button form="image" onclick="playAudio()">
+            <img src="8ball.png" alt="8-Ball" style="width:300px;height:300px;">
+
+        </button>
+        
+<h1 id="Textline">Ask the 8Ball a Question.</h1>
+    <button onclick="myFunction()">Try it</button>
+        
+        <script>
+            /* Your JS goes here */
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+    x.load();
+    x.play(); 
+    
+} 
+         var answers = [
+  'Maybe.', 'Certainly not.', 'I hope so.', 'Not in your wildest dreams.',
+  'There is a good chance.', 'Quite likely.', 'I think so.', 'I hope not.',
+  'I hope so.', 'Never!', 'Fuhgeddaboudit.', 'Ahaha! Really?!?', 'Pfft.',
+  'Sorry, bucko.', 'Hell, yes.', 'Hell to the no.', 'The future is bleak.',
+  'The future is uncertain.', 'I would rather not say.', 'Who cares?',
+  'Possibly.', 'Never, ever, ever.', 'There is a small chance.', 'Yes!'];
+
+document.getElementById('answerButton').onclick = function () {
+var answer = answers[Math.floor(Math.random() * answers.length)];
+    document.getElementById('answerContainer').innerHTML = answer;
+};   
+        </script>
+    </body>
+</html>
