@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>8-Ball</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Uncomment to use external CSS
+        <link rel="stylesheet" href="PATH/TO/EXTERNAL/STYLES.CSS">
+        -->
+
+        <style type="text/css">
+            /* Your CSS goes here */
+            p, input, button {
+                font-family: sans-serif;
+                font-size: 15px;
+            }
+            input {
+                width: 200px;
+            }
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Your HTML goes here -->
+        <embed src="" autostart="true" loop="true" hidden="true">
+        <p> Ask the 8-Ball a question </p>
+        <button id="answerme"><p>Click on the 8-Ball to receive your fortune</p><img src="8ball.png" style="width:500px;height:500px"</button>
+            <input type="text" placeholder="Write your question here"></input>
+        <p id="reply"></p>
+    
+        <!-- Uncomment to use external JavaScript
+        <script src="PATH/TO/EXTERNAL/SCRIPT.JS"></script>
+        -->
+    
+        <script>
+            /* Your JS goes here */
+var answers = ['Maybe.', 'Certainly not.', 'I hope so.', 'Not in your wildest dreams.','There is a good chance.', 'Quite likely.', 'I think so.', 'I hope not.', 'I hope so.', 'Never!', 'The future is bleak.', 'The future is uncertain.', 'I would rather not say.', 'Possibly.', 'Never, ever, ever.', 'There is a small chance.', 'Yes!'];
+            document.getElementById('answerme').onclick = function () {
+            var answer = answers[Math.floor(Math.random() * answers.length)];
+            document.getElementById('reply').innerHTML = answer;
+};
+        </script>
+    </body>
+</html>
