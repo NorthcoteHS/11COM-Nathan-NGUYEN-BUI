@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Savings and Leaderboard Simulation</title>
+</head>
+
+<body data-f-model="myModel.eqn">
+
+<p>Initial Savings was: <span data-f-bind="Initial Savings"></span></p>
+
+<p>Current Year is: <span data-f-bind="time"></span>. 
+(The simulation ends after 2020.)</p>
+
+<p>Total Savings is: <span data-f-bind="Total Savings"></span></p>
+
+<p>Current Score is: <span data-f-bind="Score"></span></p>
+
+Please enter your:
+<p>Interest Rate: <input type="text" data-f-bind="Interest Rate"></input></p>
+<p>Yearly Deposit: <input type="text" data-f-bind="Yearly Deposits"></input></p>
+
+<p>When you're ready, submit your decisions:
+<button data-f-on-click="step()">Submit and Step</button>
+</p>
+
+<p>And when you reach the end of the game, save your score:
+<button onclick="saveScore()">Save Score</button>
+</p>
+
+<p>Then check out the Leaderboard to see how you rank:
+<button onclick="showLeaderboard()">Show Leaderboard</button>
+</p>
+
+   <script src="jquery.min.js"></script>
+   <script src="lodash.js"></script>
+
+   <script src="//forio.com/tools/js-libs/1.8.1/epicenter.min.js"></script>
+   <script src="//forio.com/tools/js-libs/flow/latest/flow.min.js"></script>
+
+   <script>
+
+       var options = {
+           channel: {
+               strategy: 'always-new',
+               run: { model: 'myModel.eqn' }
+            }
+        };
+
+       Flow.initialize(options);
+
+       var ds = new F.service.Data({ root: 'leaderboard' });
+
+       function saveScore() {
+           var rm = new F.manager.RunManager();
+           rm.getRun().then(function (run) {
+               var thisRunId = run.id;           
+
+               var thisUser = 'anonymous';
+               if (run.user) { thisUser = run.user.firstName; };
+
+               var vs = rm.run.variables();
+               vs.load('Score').then(function(thisRunScore){
+                   ds.saveAs(thisRunId, 
+                       { 'score': thisRunScore[thisRunScore.length - 1], 
+                         'user': thisUser });
+               });
+           });
+       };
+
+       function showLeaderboard() {
+
+           document.write('<table>',
+               '<tr><td>Score</td>',
+               '<td>Name</td>',
+               '<td>Run</td></tr>');
+
+           ds.query('', {'score': { '$gt': 0 } }, 
+               { sort: 'score', direction: 'desc' })
+               .then(function (results) {
+                   if (results.length == 0) {
+                       document.write('<tr><td>',
+                       'No high scores available',
+                       '</td></tr>');
+                   } else {
+                       for (var i=0; i < results.length; i++) {
+                           document.write('<tr><td>', 
+                               results[i].score, '</td><td>',
+                               results[i].user, '</td><td>',
+                               results[i].id, '</td></tr>');
+                       }
+                   }
+                   document.write('</table>');                    
+           });
+       };
+   </script>
+</body>
+</html>
