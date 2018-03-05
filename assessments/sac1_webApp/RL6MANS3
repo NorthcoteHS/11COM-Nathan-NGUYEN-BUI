@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RL6MANs PUG Client</title>
+        <link rel="shortcut icon" href="6man.gif" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Uncomment to use external CSS
+        <link rel="stylesheet" href="PATH/TO/EXTERNAL/STYLES.CSS">
+        -->
+
+        <style type="text/css">
+            /* Your CSS goes here */
+            body {
+                color: white;
+                text-align: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                font-family: monospace;
+            }  
+            #inputname, #orangescore, #bluescore, #gamescore {
+                text-align: center;
+            }
+            td, th {
+                border: 1px solid #000000;
+                text-align: center;
+                padding: 10px;
+            }
+            #bluetable, #orangetable {
+                color: solid #dddddd;
+            }
+            .tablelist, .teamnames { 
+               margin: 0 auto;
+            }   
+            .center {
+                text-align: center;
+            }
+            hr { 
+                display: block;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                margin-left: 20%;
+                margin-right: 20%;
+                border-style: inset;
+                border-width: 0.5px;
+            }        
+        </style>
+    </head>
+    <body>
+        <body background="bg2.jpg"></body>
+        <img src="RL6MANStitle.png">
+        <hr>
+            <div id="teamnames">
+            <h1 bgcolor="#efb521">Orange</h1><h1 bgcolor="#5785FF">Blue</h1>
+            </div>
+            <div class="tablelist">
+                <table id="orangetable" style="display: inline-block;" bgcolor="#efb521">
+                    <tr>
+                        <th id="player1orange">synk</th>
+                    </tr>
+                    <tr>
+                        <td id="player2orange">synk</td>
+                    </tr>
+                    <tr>
+                        <td id="player3orange">synk</td>
+                    </tr>
+                </table>
+                <table id="bluetable" style="display: inline-block;" bgcolor="#5785FF">
+                    <tr>
+                        <th id="player1blue">synk</th>
+                    </tr>
+                    <tr>
+                        <td id="player2blue">synk</td>
+                    </tr>   
+                    <tr>    
+                        <td id="player3blue">synk</td>
+                    </tr>
+                            <div class="root-container">
+          <div class="team-orange team">
+              <header>ORANGE TEAM</header>
+
+              <div class="players">
+                  <section>fedhzee</section>
+                  <section>fedhzee</section>
+                  <section>fedhzee</section>
+              </div>
+          </div>
+          <div class="team-blue team">
+              <header>BLUE TEAM</header>
+
+              <div class="players">
+                  <section>fedhzee</section>
+                  <section>fedhzee</section>
+                  <section>fedhzee</section>
+              </div>
+          </div>
+        </div>
+                </table>
+            </div>
+        <div id="textbox">
+            <input placeholder="Queue for the next match by registering your alias here" type="text" id="inputname" style="width: 300px;"/>
+        </div>
+        <hr>
+        <img src="allmatchesareb05.png">
+            <div id="inputscore">
+                <input placeholder="Enter Orange Score" type="text" id="orangescore" style="width: 100px;"/>
+                <input placeholder="Enter Blue Score" type="text" id="bluescore" style="width: 100px;"/>
+            </div>
+        <!--- Replace this with an image --->
+        <img src="playerscurrentlyqueuing.png">
+            <p id="queuedplayers"></p>
+            <img src="leaderboard.png">
+                <div class="center">
+                <table bgcolor="#FFFFFF" id="leaderboardtable" width="20%">
+                    <tr>
+                        <th id="top1player"></th>
+                    </tr>
+                    <tr>
+                        <td id="top2player"></td>
+                    </tr>
+                    <tr>
+                        <td id="top3player"></td>
+                    </tr>
+                     <tr>
+                        <th id="top4player"></th>
+                    </tr>
+                    <tr>
+                        <td id="top5player"></td>
+                    </tr>
+                    <tr>
+                        <td id="top6player"></td>
+                    </tr>
+                </table>
+            </div>
+        <!-- Your HTML goes here -->
+        <!-- Uncomment to use external JavaScript
+        <script src="PATH/TO/EXTERNAL/SCRIPT.JS"></script>  
+        -->
+
+        <script>
+            /* Your JS goes here */
+            var list  = ["a","b","c","d","e","f"]
+            
+            document.getElementById = [oninput] {
+                i
+            }
+        </script>
+    </body>
+</html>

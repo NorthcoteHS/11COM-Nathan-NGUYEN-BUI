@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RL6MANs PUG Client</title>
+        <link rel="shortcut icon" href="6man.gif" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Uncomment to use external CSS
+        <link rel="stylesheet" href="PATH/TO/EXTERNAL/STYLES.CSS">
+        -->
+
+        <style type="text/css">
+            /* Your CSS goes here */
+            body {
+                color: white;
+                text-align: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                font-family: monospace;
+            }  
+            #inputname, #orangescore, #bluescore, #gamescore {
+                text-align: center;
+            }
+            hr { 
+                display: block;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                margin-left: 20%;
+                margin-right: 20%;
+                border-style: inset;
+                border-width: 0.5px;
+            }
+            .root-container {
+                padding: 20px;
+                width: 75%;
+                min-width: 300px;
+                max-width: 600px;
+            }
+            .team {
+                float: left;
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+            .team header {
+                font-size: 32px;
+                margin-bottom: 15px;
+                font-weight: n
+            }
+
+            .team .players {
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 14px;
+                width: 9em;
+                border-radius: 5px;
+            }
+            .team .players section {
+                text-align: center;
+                padding: 5px;
+                color: #fff;
+                border: 1px solid #fff;
+            }
+            .team-orange header {
+                color: orange;
+            }
+            .team-blue header {
+                color: navy;
+            }
+            .team-orange .players section {
+              background-color: orange;
+            }
+            .team-blue .players section {
+              background-color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <body background="bg2.jpg"></body>
+        <img src="RL6MANStitle.png">
+        <hr>
+            <div class="root-container">
+                <div class="team-orange team">
+                    
+                    <header>ORANGE TEAM</header>
+
+                        <div class="players">
+                            <section>synk</section>
+                            <section>cpmolden</section>
+                            <section>cobbo</section>
+                         </div>
+                        </div>
+                        <div class="team-blue team">
+                    
+                    <header>BLUE TEAM</header>
+
+                        <div class="players">
+                            <section>xtrejme</section>
+                            <section>gaming</section>
+                            <section>esports</section>
+                    </div>
+                    </div>
+                </div>
+        <div id="textbox">
+            <p id="queuedplayers"></p>
+            <input placeholder="Queue for the next match by registering your alias here" type="text" id="inputname" style="width: 300px;"/>
+        </div>
+        <hr>
+       
+        <img src="allmatchesareb05.png">
+            <div id="inputscore">
+                <form action="/action_page.php" method="get">
+                  <input type="checkbox" name="team" value="Orange">Orange<br>
+                  <input type="checkbox" name="team" value="Blue">Blue<br>
+                </form>
+            </div>
+            <img src="leaderboard.png">
+                <div class="center">
+                <table bgcolor="#FFFFFF" id="leaderboardtable" width="20%">
+                    <tr>
+                        <th id="top1player"></th>
+                    </tr>
+                    <tr>
+                        <td id="top2player"></td>
+                    </tr>
+                    <tr>
+                        <td id="top3player"></td>
+                    </tr>
+                     <tr>
+                        <th id="top4player"></th>
+                    </tr>
+                    <tr>
+                        <td id="top5player"></td>
+                    </tr>
+                    <tr>
+                        <td id="top6player"></td>
+                    </tr>
+                </table>
+            </div>
+        <!-- Your HTML goes here -->
+        <!-- Uncomment to use external JavaScript
+        <script src="PATH/TO/EXTERNAL/SCRIPT.JS"></script>  
+        -->
+
+        <script>
+            /* Your JS goes here */
+            var list  = ["a","b","c","d","e","f"]
+            
+            document.getElementById = [oninput] {
+                i
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RL6MANs PUG Client</title>
+        <link rel="shortcut icon" href="6man.gif" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Uncomment to use external CSS
+        <link rel="stylesheet" href="PATH/TO/EXTERNAL/STYLES.CSS">
+        -->
+
+        <style type="text/css">
+            /* Your CSS goes here */
+            body {
+                color: white;
+                text-align: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                font-family: monospace;
+            }  
+            #inputname, #orangescore, #bluescore, #gamescore {
+                text-align: center;
+            }
+            td, th {
+                border: 1px solid #000000;
+                text-align: center;
+                padding: 10px;
+            }
+            #bluetable, #orangetable, #titleimage {
+                color: solid #dddddd;
+                text-align: center;
+            }
+            .tablelist, .teamnames { 
+               margin: 0 auto;
+            }   
+            .center {
+                text-align: center;
+            }
+            hr { 
+                display: block;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                margin-left: 20%;
+                margin-right: 20%;
+                border-style: inset;
+                border-width: 0.5px;
+            }        
+        </style>
+    </head>
+    <body>
+        <body background="bg2.jpg"></body>
+        <img id="titleimage" src="RL6MANStitle1.png">
+        <hr>
+            <div id="teamnames">
+            <h1 bgcolor="#efb521">Orange</h1><h1 bgcolor="#5785FF">Blue</h1>
+            </div>
+            <div class="tablelist">
+                <table id="orangetable" style="display: inline-block;" bgcolor="#efb521">
+                    <tr>
+                        <th id="player1orange">Player 1</th>
+                    </tr>
+                    <tr>
+                        <td id="player2orange">Player 2</td>
+                    </tr>
+                    <tr>
+                        <td id="player3orange">Player 3</td>
+                    </tr>
+                </table>
+                <table id="bluetable" style="display: inline-block;" bgcolor="#5785FF">
+                  <tr>
+                        <th id="player1blue">Player 1</th>
+                    </tr>
+                    <tr>
+                        <td id="player2blue">Player 2</td>
+                    </tr>
+                    <tr>
+                        <td id="player3blue">Player 3</td>
+                    </tr>
+                </table>
+            </div>
+        <div id="textbox">
+            <input placeholder="Queue for the next match by registering your alias here" type="text" id="inputname" style="width: 300px;"/>
+        </div>
+        <hr>
+        <img src="allmatchesareb05.png">
+            <div id="checkinputscore">
+                <form action="/action_page.php" method="get">
+                    <input placeholder="Enter Orange Score" type="text" id="orangescore" style="width: 100px;"/>
+                    <input placeholder="Enter Blue Score" type="text" id="bluescore" style="width: 100px;"/>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        <!--- Replace this with an image --->
+        <img src="playerscurrentlyqueuing.png">
+            <p id="queuedplayers"></p>
+        <!-- Your HTML goes here -->
+        <!-- Uncomment to use external JavaScript
+        <script src="PATH/TO/EXTERNAL/SCRIPT.JS"></script>  
+        -->
+
+        <script>
+            /* Your JS goes here */
+            
+            
+            function submitname(event) {
+                if(event.keyCode=== 13){
+                    var name = document.getElementById('inputname').value
+                    myArray.push(document.getElementById('inputname').value);
+                    document.getElementById("inputname").value = "";
+                    name.toString();
+                    document.getElementById("queuedplayers").textContent += ',' + name;
+                    if(text.length > 0) { text += ', ';} text += value
+                }
+            }
+            document.getElementById('inputname').addEventListener('keyup', submitname);
+            
+            myArray = [];
+            
+        </script>
+    </body>
+</html>
