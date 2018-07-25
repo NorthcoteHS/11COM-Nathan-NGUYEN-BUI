@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Uncomment to use external CSS
+        <link rel="stylesheet" href="PATH/TO/EXTERNAL/STYLES.CSS">
+        -->
+
+        <style type="text/css">
+            /* Your CSS goes here */
+
+            body {
+                text-align: center
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <!-- Your HTML goes here -->
+        <h1>Calculator</h1>
+            <input type="number" id="quantity" min="0" max="" placeholder="First Number">
+                <select id="function">
+                    <option></option>
+                    <option value="1">+</option>
+                    <option value="2">-</option>
+                    <option value="3">x</option>
+                    <option value="4">/</option>
+                    <option value="5">x^y</option>
+                    <option value="6">√</option>
+                </select>
+            <input type="number" id="quantity2" min="0" max="" placeholder="Second Number">
+            <button type="button" onclick="calculate()" id="calculate">Solve</button>
+        <p id="result">Answer</p>
+
+        <!-- Uncomment to use external JavaScript
+        <script src="PATH/TO/EXTERNAL/SCRIPT.JS"></script>
+        -->
+
+        <script>
+            /* Your JS goes here */
+
+            function calculate() {
+                var x = parseFloat(document.getElementById("quantity").value);
+                var y = parseFloat(document.getElementById("quantity2").value);
+                var e = document.getElementById("function");
+                var selection = e.selectedIndex;
+
+            if (e.selectedIndex == 1) {
+                var result = x + y;
+            }
+
+            if (e.selectedIndex == 2) {
+                var result = x - y;
+            }
+
+            if (e.selectedIndex == 3) {
+                var result = x * y;
+            }
+
+            if (e.selectedIndex == 4) {
+                var result = x / y;
+            }
+
+            if (e.selectedIndex == 5) {
+                var result = Math.pow(x, y);
+            }
+
+            if (e.selectedIndex == 6) {
+                var result = Math.sqrt(x, y);
+            }
+
+            document.getElementById("result").innerHTML = result;
+            }
+
+        </script>
+    </body>
+</html>
