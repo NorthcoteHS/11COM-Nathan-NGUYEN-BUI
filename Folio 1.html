@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Barry's Fishmonger</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Uncomment to use external CSS
+        <link rel="stylesheet" href="PATH/TO/EXTERNAL/STYLES.CSS">
+        -->
+
+        <style type="text/css">
+            /* Your CSS goes here */
+            body {
+                text-align: center;
+            }
+            
+            table {
+                border: 1px solid black;
+                text-align: center;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            
+            
+        </style>
+    </head>
+
+    <body>
+        <!-- Your HTML goes here -->
+        <h1>Barry's Fishmonger</h1>
+        <table id="table">
+            <tr>
+            <th>Fish Type</th>
+            <th>Price per Kg</th>
+            </tr>
+            <tr>
+            <td>Barramundi Wild</td>
+            <td>$9.80</td>
+            <tr>
+            <td>Flathead Tails</td>
+            <td>$10.99</td>
+            <tr>
+            <td>Rockling</td>
+            <td>$9.70</td>
+            </tr>
+            <tr>
+            <td>Snapper Fillets</td>
+            <td>$9.80</td>
+            </tr>
+            <tr>
+            <td>Gummy Shark (flake)</td>
+            <td>$8.50</td>
+            </tr>
+        </table>
+        
+        <p>Are you a business customer?</p>
+            <select id="business">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+        <p>Which fish?</p>
+            <select id="function">
+                <option></option>
+                <option value="1">Barramundi Wild</option>
+                <option value="2">Flathead Tails</option>
+                <option value="3">Rockling</option>
+                <option value="4">Snapper Fillets</option>
+                <option value="5">Gummy Shark (flakes)</option>
+            </select>
+        <p>How many kilograms would you like to purchase?</p>
+        <input type="number" id="kilos" min="0" max="20"><button type="button" onclick="calculate()" id="calculate">Calculate Price</button>
+        <p>Total Price:</p>
+        <p id="result"></p>
+        
+        <!-- Uncomment to use external JavaScript
+        <script src="PATH/TO/EXTERNAL/SCRIPT.JS"></script>
+        -->
+            
+        <script>
+            /* Your JS goes here */
+            
+            function calculate() {
+                var kilo = parseFloat(document.getElementById("kilos").value);
+                var e = document.getElementById("function").value;
+                var b = document.getElementById("business").value;
+                var selection = e.selectedIndex;
+                var business = b.selectedIndex
+            
+            if (b.selectedIndex == no) { 
+              
+            if (e.selectedIndex == 1) {
+                var result = kilo * 9.80;
+            }
+            
+            if (e.selectedIndex == 2) {
+                var result = kilo * 10.99;
+            }
+            
+            if (e.selectedIndex == 3) {
+                var result = kilo * 9.70;
+            }
+            
+            if (e.selectedIndex == 4) {
+                var result = kilo * 9.80;
+            }
+                
+            if (e.selectedIndex == 5) {
+                var result = kilo * 8.50;
+            }
+            }
+            
+            if (b.selectedIndex == yes) { 
+              
+            if (e.selectedIndex == 1) {
+                var result = kilo * 9.80 - kilo * 9.8 * 0.1;
+            }
+            
+            if (e.selectedIndex == 2) {
+                var result = kilo * 10.99 - kilo * 10.99 * 0.1;
+            }
+            
+            if (e.selectedIndex == 3) {
+                var result = kilo * 9.70 - kilo * 9.7 * 0.1;
+            }
+            
+            if (e.selectedIndex == 4) {
+                var result = kilo * 9.80 - kilo * 9.8 * 0.1;
+            }
+                
+            if (e.selectedIndex == 5) {
+                var result = kilo * 8.50 - kilo * 8.5 * 0.1;
+            }
+            }
+                
+            
+            document.getElementById("result").innerHTML = "$" + result;
+            
+            }
+        </script>
+    </body>
+</html>
