@@ -28,6 +28,7 @@
     <body>
         <!-- Your HTML goes here -->
         <h1>Barry's Fishmonger</h1>
+        <h5>Maximum 20 kilograms per fish</h5>
         <table id="table">
             <tr>
             <th>Fish Type</th>
@@ -55,8 +56,8 @@
         
         <p>Are you a business customer?</p>
             <select id="business">
-                <option value="No">No</option>
-                <option value="Yes">Yes</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
             </select>
         <p>Which fish?</p>
             <select id="function">
@@ -80,61 +81,38 @@
             /* Your JS goes here */
             
             function calculate() {
-                var kilo = parseFloat(document.getElementById("kilos").value);
-                var e = document.getElementById("function").value;
-                var b = document.getElementById("business").value;
-                var selection = e.selectedIndex;
-                var business = b.selectedIndex
-            
-            if (b.selectedIndex == no) { 
-              
-            if (e.selectedIndex == 1) {
-                var result = kilo * 9.80;
-            }
-            
-            if (e.selectedIndex == 2) {
-                var result = kilo * 10.99;
-            }
-            
-            if (e.selectedIndex == 3) {
-                var result = kilo * 9.70;
-            }
-            
-            if (e.selectedIndex == 4) {
-                var result = kilo * 9.80;
-            }
-                
-            if (e.selectedIndex == 5) {
-                var result = kilo * 8.50;
-            }
-            }
-            
-            if (b.selectedIndex == yes) { 
-              
-            if (e.selectedIndex == 1) {
-                var result = kilo * 9.80 - kilo * 9.8 * 0.1;
-            }
-            
-            if (e.selectedIndex == 2) {
-                var result = kilo * 10.99 - kilo * 10.99 * 0.1;
-            }
-            
-            if (e.selectedIndex == 3) {
-                var result = kilo * 9.70 - kilo * 9.7 * 0.1;
-            }
-            
-            if (e.selectedIndex == 4) {
-                var result = kilo * 9.80 - kilo * 9.8 * 0.1;
+                // Calculates the end price.
+                var kilo = document.getElementById("kilos").valueAsNumber;
+                var e = document.getElementById("function").selectedIndex;
+                var b = document.getElementById("business").selectedIndex;
+                var result = 0;
+    
+                switch (e)
+                //
+                {
+                    case 1:
+                    result = kilo * 9.80;
+                    break;
+                    case 2:
+                    result = kilo * 10.99;
+                    break;
+                    case 3:
+                    result = kilo * 9.70;
+                    break;
+                    case 4:
+                    result = kilo * 9.80;
+                    break;
+                    case 5:
+                    result = kilo * 8.50;
+                    break;
+                }
+    
+            if (b == 1) {
+                // Take 10% off if it's a business customer.
+                result *= 0.9;
             }
                 
-            if (e.selectedIndex == 5) {
-                var result = kilo * 8.50 - kilo * 8.5 * 0.1;
-            }
-            }
-                
-            
             document.getElementById("result").innerHTML = "$" + result;
-            
             }
         </script>
     </body>
