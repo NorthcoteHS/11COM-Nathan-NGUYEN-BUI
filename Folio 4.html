@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Number Guesser</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Uncomment to use external CSS
+        <link rel="stylesheet" href="PATH/TO/EXTERNAL/STYLES.CSS">
+        -->
+
+        <style type="text/css">
+            /* Your CSS goes here */
+            <body
+        </style>
+    </head>
+
+    <body>
+        <!-- Your HTML goes here -->
+        <h1>Number Guesser</h1>
+            <input type="number" min="0" max="1000" id="guess" placeholder="Your Guess" style="width: 8.8%" />
+            <input type="button" onclick="inputedguess()" value="Submit" /><br />
+            <input type="button" id="outputguesses" onclick="showGuesses()" value="Show My Guesses" />  
+            <input type="button" onclick="generateNumberToGuess(true)" value="New Game" /><br />
+            <textarea id="output" name="output" rows="45" style="width: 100%"></textarea>
+        <!-- Uncomment to use external JavaScript
+        <script src="PATH/TO/EXTERNAL/SCRIPT.JS"></script>
+        -->
+
+        <script>
+            /* Your JS goes here */
+            function inputedguess() {
+                var guess = document.getElementById("guess").value;
+                var guesses = document.getElementById("output");
+                if (guess == numToGuess) {
+                    guesses.value = guesses.value + "\r" + "You have guessed correctly! ("+guess+")";
+                    
+                } else if (guess > numToGuess) {
+                    guesses.value = guesses.value + "\r" + "You guessing too high!("+guess+")";
+                    
+                } else {
+                    guesses.value = guesses.value + "\r" + "You guessing too low!("+guess+")"
+                }
+
+            }
+            
+            function generateNumberToGuess(confirmIt) {
+                var guesses = document.getElementById("output");
+                
+                if (confirmIt && !confirm('Generate a new number?')) {
+                    return;
+                }
+
+                guesses.value = "";
+                numToGuess = Math.floor(Math.random()*1000);
+                guesses.value = "You have 10 guesses, best of luck! Your number has been generated.";
+
+                document.getElementById('numberToGuess').value = '';
+            }
+            
+            window.onload = function(){
+                generateNumberToGuess();
+            }
+
+        </script>
+    </body>
+</html>
